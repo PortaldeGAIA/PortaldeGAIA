@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sonido y Frecuencia: Portal de Gaia</title>
+  <meta name="description" content="Bienvenido al Portal de Gaia — un umbral de sanación sonora y reconexión con el pulso vivo de la Tierra en Costa Rica." />
+  <meta property="og:title" content="Sonido y Frecuencia: Portal de Gaia" />
+  <meta property="og:description" content="Un espacio ceremonial de Sound Healing y Aromaterapia para alinear cuerpo, mente y espíritu con el pulso de la Madre Tierra." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#D4AF37" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0b0d;             /* negro cósmico */
+      --fg: #f7f7f5;             /* blanco suave */
+      --gold: #D4AF37;           /* dorado clásico */
+      --gold-2: #f2d27c;         /* dorado claro */
+      --muted: #b8b8bb;          /* texto secundario */
+      --card: #121216;           /* paneles */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 600px at 80% -10%, rgba(212,175,55,.18), transparent 60%),
+                               radial-gradient(900px 500px at 10% 110%, rgba(242,210,124,.12), transparent 60%),
+                               var(--bg);
+      color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    /* Tipografías de display */
+    h1,h2,h3,.display{font-family: Marcellus, serif; letter-spacing:.3px}
+    a{color:var(--gold); text-decoration:none}
+    a:hover{opacity:.9}
+
+    /* Nav */
+    .nav{position:fixed; inset:0 auto auto 0; height:64px; width:100%; display:flex; align-items:center; justify-content:center; z-index:50; backdrop-filter:saturate(120%) blur(6px); background:linear-gradient(to bottom, rgba(11,11,13,.85), rgba(11,11,13,.2)); border-bottom:1px solid rgba(212,175,55,.2)}
+    .nav-inner{width:min(1150px,92%); display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:.75rem}
+    .brand-mark{width:28px; height:28px}
+    .brand-name{font-family: Marcellus, serif; font-size:1.05rem; color:var(--fg)}
+    .nav-links{display:flex; gap:1.25rem; font-size:.95rem}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border:1px solid rgba(212,175,55,.35); color:var(--gold); border-radius:999px; transition:all .25s ease; background:transparent}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px -8px rgba(212,175,55,.35)}
+    .btn.gold{background:linear-gradient(135deg, var(--gold), var(--gold-2)); color:#1a1a1a; border-color:transparent; font-weight:600}
+
+    /* Hero */
+    .hero{position:relative; padding-top:120px; padding-bottom:80px}
+    .container{width:min(1120px,92%); margin:0 auto}
+    .grid{display:grid; grid-template-columns:1.1fr .9fr; gap:3rem}
+    .kicker{color:var(--gold-2); text-transform:uppercase; letter-spacing:.18em; font-size:.82rem}
+    .title{margin:.4rem 0 .6rem; font-size:clamp(2rem, 3.4vw + 1rem, 4rem); line-height:1.08}
+    .subtitle{color:var(--muted); font-size:1.05rem; margin-bottom:1.4rem}
+    .cta{display:flex; gap:.9rem; flex-wrap:wrap}
+
+    /* Card quote */
+    .quote{background:linear-gradient(180deg, rgba(212,175,55,.08), rgba(212,175,55,.02)); border:1px solid rgba(212,175,55,.25); padding:1.4rem; border-radius:18px}
+    blockquote{margin:0; font-family: Marcellus, serif; font-size:1.05rem}
+    blockquote em{color:var(--gold-2)}
+
+    /* Sacred geometry canvas */
+    .sg{position:absolute; inset:0; pointer-events:none; z-index:0}
+    .sg svg{position:absolute; width:100vmin; height:100vmin; opacity:.14; left:50%; top:44%; transform:translate(-50%,-50%) rotate(8deg)}
+    .stars{position:absolute; inset:0; background:radial-gradient(2px 2px at 20% 30%, #fff, transparent 40%),
+                                     radial-gradient(1.5px 1.5px at 70% 60%, #fff, transparent 40%),
+                                     radial-gradient(1px 1px at 40% 80%, #fff, transparent 40%);
+           opacity:.12; mix-blend-mode:screen; animation: twinkle 6s ease-in-out infinite}
+    @keyframes twinkle{ 0%,100%{opacity:.08} 50%{opacity:.18} }
+
+    /* Sections */
+    section{position:relative; z-index:1}
+    .section{padding:72px 0; border-top:1px solid rgba(212,175,55,.15)}
+    .section h2{font-size:2rem; margin:0 0 .6rem}
+    .section p{color:var(--muted)}
+
+    .cards{display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:1rem}
+    .card{background:var(--card); border:1px solid rgba(212,175,55,.16); border-radius:18px; padding:1rem}
+    .card h3{margin:.2rem 0 .4rem}
+
+    /* Footer */
+    footer{padding:42px 0; border-top:1px solid rgba(212,175,55,.18); color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr; gap:2rem}
+      .nav-links{display:none}
+      .cards{grid-template-columns:1fr}
+      .hero{padding-top:100px}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <!-- LOGO: reemplaza el SVG por tu logo si lo deseas -->
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" stroke="url(#g)" stroke-width="2"/>
+          <path d="M50 12 L76 62 H24 Z" stroke="url(#g)" stroke-width="2" fill="none"/>
+          <circle cx="50" cy="50" r="10" stroke="url(#g)" stroke-width="2"/>
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#D4AF37"/>
+              <stop offset="1" stop-color="#f2d27c"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="brand-name">Portal de Gaia</span>
+      </div>
+      <div class="nav-links">
+        <a href="#bienvenida">Bienvenida</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#metodos">Métodos</a>
+        <a href="#agenda" class="btn gold">Reservar Sesión</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="bienvenida">
+    <div class="sg">
+      <!-- Estrellas suaves -->
+      <div class="stars"></div>
+      <!-- Geometría sagrada (Flor/semilla de la vida) -->
+      <svg viewBox="0 0 600 600" aria-hidden="true">
+        <g stroke="url(#gold)" stroke-width="1.2" fill="none">
+          <!-- círculos concéntricos formando semilla de la vida -->
+          <circle cx="300" cy="300" r="180"/>
+          <circle cx="300" cy="300" r="120"/>
+          <circle cx="300" cy="300" r="60"/>
+          <!-- pétalos -->
+          <circle cx="300" cy="180" r="120"/>
+          <circle cx="420" cy="300" r="120"/>
+          <circle cx="300" cy="420" r="120"/>
+          <circle cx="180" cy="300" r="120"/>
+          <circle cx="380" cy="220" r="120"/>
+          <circle cx="220" cy="380" r="120"/>
+        </g>
+        <defs>
+          <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D4AF37"/>
+            <stop offset="1" stop-color="#f2d27c"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="container grid">
+      <div>
+        <div class="kicker">Sonido y Frecuencia • Costa Rica</div>
+        <h1 class="title">Estás en el <span style="color:var(--gold-2)">Portal de Gaia</span></h1>
+        <p class="subtitle"> Esta es una puerta abierta hacia la sanación con sonido y reconexión con el pulso de la Tierra. Aquí, el sonido es memoria, intención y retorno al origen.</p>
+        <div class="cta">
+          <a class="btn gold" href="#agenda">Reservar Sesión</a>
+          <a class="btn" href="#texto-ceremonial">Leer invocación</a>
+        </div>
+      </div>
+      <div>
+        <div class="quote">
+          <blockquote id="texto-ceremonial">
+            <p><em>“Entra con el corazón abierto y los sentidos despiertos. El Portal de Gaia es aquí y ahora, tu espíritu recuerda su naturaleza sagrada.”</em></p>
+            <p>Respira, siente la vibración viajando a través de ti, conectando tus células con el corazón del planeta. Todo vuelve a su orden natural.</p>
+            <p><strong>Eres bienvenida/o al corazón vivo de la Tierra.</strong> Eres parte de su pulso — Escucha, recibe y siente.</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFICIOS -->
+  <section class="section" id="beneficios">
+    <div class="container">
+      <h2>Beneficios de la Sanación con Sonidos y Frecuencias </h2>
+      <p>La vibración adecuada guía al cuerpo hacia la homeostasis (sanación natural de tu cuerpo). Cada frecuencia armoniza sistemas, emociones y mente, facilitando descanso, claridad y regeneración celular.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Equilibrio Nervioso</h3>
+          <p>Reduce el estrés, suaviza el sistema simpático y favorece estados de calma profunda y sueño reparador.</p>
+        </article>
+        <article class="card">
+          <h3>Claridad & Presencia</h3>
+          <p>La mente se aquieta, surge foco claro y aumenta la sensibilidad a la intuición y la creatividad.</p>
+        </article>
+        <article class="card">
+          <h3>Reconexión con Gaia</h3>
+          <p>Enraizamiento amoroso, sensación de pertenencia y coherencia entre corazón humano y pulso de la Tierra y todos sus seres vivos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODOS -->
+  <section class="section" id="metodos">
+    <div class="container">
+      <h2>Métodos: Sonido & Aromaterapia</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Cuencos de Cuarzo</h3>
+          <p>Ondas puras que armonizan centros energéticos y liberan tensión acumulada en tejidos y emociones.</p>
+        </article>
+        <article class="card">
+          <h3>Gong & Tambores</h3>
+          <p>Frecuencias expansivas que inducen estados meditativos, abren la escucha interior y limpian el campo sutil.</p>
+        </article>
+        <article class="card">
+          <h3>Aromaterapia</h3>
+          <p>Sinergias botánicas que apoyan la regulación emocional, la respiración consciente y la memoria sensorial.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA / CTA -->
+  <section class="section" id="agenda">
+    <div class="container">
+      <h2>Reserva Tu Sesión</h2>
+      <p>Atención personalizada en Costa Rica. Elige fecha y confirma tu espacio sagrado.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Sesión Individual</h3>
+          <p>90 minutos de inmersión sonora guiada + aromaterapia.</p>
+          <p style="color:var(--gold-2); font-weight:600;">Precio: 29,000 CRC</p>
+          <a class="btn gold" href="mailto:reservas@portaldegaia.cr?subject=Reserva%20Sesi%C3%B3n%20Individual">Solicitar Reserva</a>
+        </article>
+        <article class="card">
+          <h3>Sesión para Dos</h3>
+          <p>Ritual de resonancia compartida, respiración y coherencia de corazón.</p>
+          <p style="color:var(--gold-2); font-weight:600;">Precio: 40,000 CRC</p>
+          <a class="btn gold" href="mailto:reservas@portaldegaia.cr?subject=Reserva%20Sesi%C3%B3n%20para%20Dos">Solicitar Reserva</a>
+        </article>
+        <article class="card">
+          <h3>Ceremonia Grupal</h3>
+          <p>Viaje sonoro colectivo con intención compartida y descanso profundo.</p>
+          <p style="color:var(--gold-2); font-weight:600;">Precio: consultar con base a # de personas</p>
+          <a class="btn gold" href="mailto:reservas@portaldegaia.cr?subject=Reserva%20Ceremonia%20Grupal">Solicitar Reserva</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <div>
+        <strong>Portal de Gaia</strong> — Sonido y Frecuencia · Costa Rica
+        <div style="font-size:.92rem; color:var(--muted)">© <span id="year"></span> Todos los derechos reservados.</div>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap;">
+        <a class="btn" href="#bienvenida">Inicio</a>
+        <a class="btn" href="mailto:PortaldeGAIA.cr@gmail.com">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // año dinámico y desplazamiento suave
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+  </script>
+</body>
+</html>
